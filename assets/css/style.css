@@ -1,26 +1,30 @@
 body{
-	background-image:url(../images/food.png);
-	width:700px;
-	margin:auto;
-	text-align: center;
+	background-color:lightpink;
+}
+
+#right-side{
+	text-align: right;
+	margin: 150px 60px 0px 0px;
 }
 
 h1{
-	font-family: "Sigmar One";
-	font-size: 50px;
-	color:black;
-	padding:20px;
-	margin-top:20px;
-	text-shadow: 2px 2px white;
-	border-bottom:2px solid black;
+	font-family: "Oswald", sans-serif;
+	color:white;
+	font-size: 100px;
+}
+
+p{
+	font-family:"Cantarell", sans-serif;
+	color:white;
+	margin-top:30px;
 }
 
 button{
-	padding:20px;
-	font-family:"Sigmar One";
-	border:2px solid black;
-	font-size:20px;
-	border-radius: 50px;
-	margin-top:100px;
+	background-color: lightpink;
+	color:white;
+	border:2px solid white;
+	font-size: 20px;
+	font-family:"Oswald", sans-serif;
+	margin-top:50px;
 }
 
