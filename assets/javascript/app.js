@@ -1,4 +1,4 @@
-$(document).ready(function()){
+$(document).ready(function(){
 
 //Trivia Questions
 var triviaQuestions = [{
@@ -39,13 +39,64 @@ var triviaQuestions = [{
   correctAnswer:"Mad Max: Fury Road"
 }];
 
-//Creating the timer
+//Creating the timer and scoring
 var timer;
 
 var game = {
   correct:0,
   incorrect:0,
+  score:150,
 }
+
+//Function for scoring and countdown
+function countdown(){
+  score--;
+  $("#scoreboard").html(score);
+  if (score === 0){
+    alert("Time's up!");
+    endGame();
+  }
+}
+
+//Function to start the game
+function startGame(){
+  timer = setInterval(countdown, 1000);
+
+  for (var i = 0; i < triviaQuestions.length; i++) {
+      $("#trivia-div").append("<h2>" + triviaQuestions[i].question + "</h2>");
+      for (var j = 0; j < triviaQuestions[i].answers.length; j++) {
+        $("#trivia-div").append("<input type='radio' name='question-" + i +
+        "' value='" + triviaQuestions[i].answers[j] + "''>" + triviaQuestions[i].answers[j]);
+      }
+  }
+  $("#trivia-div").append("<button id='done-button'>Done</button>");
+}
+
+//Function to end the game
+function endGame(){
+  $.each($("input[name='question-0']:checked"), function(){
+    if($(this).val() === triviaQuestions[0].correctAnswer){
+      game.correct++;
+    }
+    else{
+      game.incorrect++;
+    }
+  });
+  this.result();
+}
+
+function result(){
+  clearInterval(timer);
+}
+
+//Click to start and end the game
+$("#start-button").click(function(){
+  startGame();
+})
+
+$("#done-button").click(function(){
+  endGame();
+})
 
 });
   
