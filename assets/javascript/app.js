@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-//Trivia Questions
+//Variables
 var triviaQuestions = [{
   question:"What is Kate's favorite food?",
   answers: ["Tamales", "Empanadas", "Mac and Cheese", "Pickles"],
@@ -39,64 +39,134 @@ var triviaQuestions = [{
   correctAnswer:"Mad Max: Fury Road"
 }];
 
-//Creating the timer and scoring
 var timer;
+var correctAnswer = 0;
+var incorrectAnswer = 0;
+var startingTime = 10;
 
-var game = {
-  correct:0,
-  incorrect:0,
-  score:150,
-}
+  //Function Scoring and Countdown
+  function countdown(){
+    startingTime--;
+    $("#scoreboard").html(startingTime);
+    if (startingTime === 0){
+      endGame();
+    }
+  };
 
-//Function for scoring and countdown
-function countdown(){
-  score--;
-  $("#scoreboard").html(score);
-  if (score === 0){
-    alert("Time's up!");
-    endGame();
-  }
-}
+  //Timer Function and Adding Trivia Questions to Screen
+  function startGame(){
+    $("#start-button").remove();
 
-//Function to start the game
-function startGame(){
-  timer = setInterval(countdown, 1000);
+    timer = setInterval(countdown, 1000);
 
-  for (var i = 0; i < triviaQuestions.length; i++) {
-      $("#trivia-div").append("<h2>" + triviaQuestions[i].question + "</h2>");
-      for (var j = 0; j < triviaQuestions[i].answers.length; j++) {
-        $("#trivia-div").append("<input type='radio' name='question-" + i +
-        "' value='" + triviaQuestions[i].answers[j] + "''>" + triviaQuestions[i].answers[j]);
+    $("#timer-div").html("<h2> TIME LEFT: </h2>");
+
+    for (var i = 0; i < triviaQuestions.length; i++) {
+        $("#trivia-div").append("<h2>" + triviaQuestions[i].question + "</h2>");
+        for (var j = 0; j < triviaQuestions[i].answers.length; j++) {
+          $("#trivia-div").append("<input type ='radio'>" + triviaQuestions[i].answers[j]);
+        }
+    }
+    $("#trivia-div").append("<button id='done-button'>DONE</button>");
+  };
+
+  //Function to Check Questions
+  function endGame(){
+
+    clearInterval(timer);
+
+    $.each($("input[name='question-0']:checked"), function(){
+      if($(this).val() === triviaQuestions[0].correctAnswer){
+        correct++;
       }
-  }
-  $("#trivia-div").append("<button id='done-button'>Done</button>");
-}
+      else{
+        incorrect++;
+      }
+    });
+    $.each($("input[name='question-1']:checked"), function(){
+      if($(this).val() === triviaQuestions[1].correctAnswer){
+        correct++;
+      }
+      else{
+        incorrect++;
+      }
+    });
+    $.each($("input[name='question-2']:checked"), function(){
+      if($(this).val() === triviaQuestions[2].correctAnswer){
+        correct++;
+      }
+      else{
+        incorrect++;
+      }
+    });
+    $.each($("input[name='question-3']:checked"), function(){
+      if($(this).val() === triviaQuestions[3].correctAnswer){
+        correct++;
+      }
+      else{
+        incorrect++;
+      }
+    });
+    $.each($("input[name='question-4']:checked"), function(){
+      if($(this).val() === triviaQuestions[4].correctAnswer){
+        correct++;
+      }
+      else{
+        incorrect++;
+      }
+    });
+    $.each($("input[name='question-5']:checked"), function(){
+      if($(this).val() === triviaQuestions[5].correctAnswer){
+        correct++;
+      }
+      else{
+        incorrect++;
+      }
+    });
+    $.each($("input[name='question-6']:checked"), function(){
+      if($(this).val() === triviaQuestions[6].correctAnswer){
+        correct++;
+      }
+      else{
+        incorrect++;
+      }
+    });
+    $.each($("input[name='question-7']:checked"), function(){
+      if($(this).val() === triviaQuestions[7].correctAnswer){
+        correct++;
+      }
+      else{
+        incorrect++;
+      }
+    });
+    $.each($("input[name='question-8']:checked"), function(){
+      if($(this).val() === triviaQuestions[8].correctAnswer){
+        correct++;
+      }
+      else{
+        incorrect++;
+      }
+    });
 
-//Function to end the game
-function endGame(){
-  $.each($("input[name='question-0']:checked"), function(){
-    if($(this).val() === triviaQuestions[0].correctAnswer){
-      game.correct++;
-    }
-    else{
-      game.incorrect++;
-    }
-  });
-  this.result();
-}
+    this.result();
+  };
 
-function result(){
-  clearInterval(timer);
-}
+  //Result Function
+  function result(){
+    clearInterval(timer);
+    $("#scoreboard").append("<h3>Correct Answers: " + this.correct + "</h3>");
+    $("#scoreboard").append("<h3>Incorrect Answers: " + this.incorrect + "</h3>");
+    $("#scoreboard").append("<h3>Unanswered: " + (questions.length - (this.incorrect + this.correct)) + "</h3>");
+  };
 
-//Click to start and end the game
-$("#start-button").click(function(){
-  startGame();
-})
+  //Click to Start and End
+  $("#start-button").click(function(){
+    startGame();
+  })
 
-$("#done-button").click(function(){
-  endGame();
-})
+  $("#done-button").click(function(){
+    endGame();
+  })
 
 });
   

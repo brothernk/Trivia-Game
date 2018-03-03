@@ -4,13 +4,20 @@ body{
 
 #right-side{
 	text-align: right;
-	margin: 150px 60px 0px 0px;
+	margin-top:80px;
 }
 
 h1{
 	font-family: "Oswald", sans-serif;
 	color:white;
 	font-size: 100px;
+}
+
+h2{
+	font-family: "Oswald", sans-serif;
+	color:white;
+	font-size: 20px;
+	margin-top:30px;
 }
 
 p{
@@ -25,6 +32,16 @@ button{
 	border:2px solid white;
 	font-size: 20px;
 	font-family:"Oswald", sans-serif;
-	margin-top:50px;
+	margin-top:10px;
+	margin-bottom: 50px;
 }
+
+#trivia-div{
+	font-family:"Cantarell", sans-serif;
+}
+
+
+
+
+
 
