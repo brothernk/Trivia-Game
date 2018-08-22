@@ -1,3 +1,3 @@
 # Trivia-Game
 
-Application using objects and timers to create a simple trivia game.
+This application uses objects and timers to create a simple trivia game.

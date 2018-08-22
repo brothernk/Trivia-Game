@@ -1,47 +1,99 @@
-body{
-	background-color:lightpink;
+/* Global Styling =========================================================================== */
+* { 
+    margin:0 auto; 
+    padding: 0; 
+    box-sizing: border-box; 
 }
 
-#right-side{
-	text-align: right;
-	margin-top:80px;
+body {
+	background-color:#EE6055;
 }
 
-h1{
-	font-family: "Oswald", sans-serif;
+.playing-area {
+	background-color: #AAF683;
+	color:#3E875F;
+	display: flex;
+	font-family: "Open Sans", sans-serif;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	text-align: center;
+	padding:50px 30px;
+	min-height: 100vh;
+	width: 80vw;
+	box-shadow: 10px 10px 100px #6D2C27;
+}
+
+/* Right Side =========================================================================== */
+h1, button {
+	font-family: "Luckiest Guy", serif;
+}
+
+h1 {
+	font-size: 120px;
+	color:#3E875F;
+	letter-spacing: 5px;
+}
+
+h2 {
+	padding:30px;
+	font:30px "Luckiest Guy";
+	font-weight: bold;
 	color:white;
-	font-size: 100px;
+	letter-spacing: 3px;
+	background-color:#377955;
+	margin: 70px 0 20px 0;
+	box-shadow: 5px 5px 5px #88c468;
 }
 
-h2{
-	font-family: "Oswald", sans-serif;
-	color:white;
-	font-size: 20px;
-	margin-top:30px;
+.welcome-p {
+	font-size: 17px;
+	max-width: 700px;
 }
 
-p{
-	font-family:"Cantarell", sans-serif;
-	color:white;
-	margin-top:30px;
+.timer-p/*Timer*/ {
+	font: 30px "Luckiest Guy", sans-serif;
+	position: fixed;
+	top:1vh;
+	right:1vw;
+	width:85px;
+	background-color:#AAF683;
+	padding:25px 20px 20px 20px;
+	border-radius: 5px;
+	box-shadow: 5px 5px 20px #6D2C27;
 }
 
-button{
-	background-color: lightpink;
-	color:white;
-	border:2px solid white;
-	font-size: 20px;
-	font-family:"Oswald", sans-serif;
-	margin-top:10px;
-	margin-bottom: 50px;
+button {
+	background-color: #3E875F;
+	padding:20px 20px 15px 20px;
+	cursor: pointer;
+	font-size:25px;
+	border-radius: 10px;
+	color:#FFF5F3;
+	border:none;
+	box-shadow: 3px 3px 5px #3E875F;
 }
 
-#trivia-div{
-	font-family:"Cantarell", sans-serif;
+button:hover{
+	transform: scale(.98);
+	box-shadow: 1px 1px 5px #3E875F;
+	transition: .15s;
+	background-color:#377955;
 }
 
+input[type="radio"]{
+	margin:20px 10px 10px 50px;
+}
 
+#scoreboard-div {
+	padding:20px;
+}
 
+#done-div {
+	margin-top:50px;
+}
 
-
-
+h6{
+	max-width:300px;
+	margin:50px;
+}

@@ -1,31 +1,34 @@
-<!doctype html>
-<html lang="en-us">
-
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Trivia Game</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Cantarell|Oswald" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Trivia Game</title>
+    <!--CSS Files-->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy|Open+Sans" rel="stylesheet">
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 </head>
 
 <body>
-<div class ="container">
-	<div class ="row">
-		<div class ="col-md" id="left-side">
-			<div id="trivia-div"></div>
-		</div>
-		<div class ="col-sm-4" id="right-side">
-			<h1>Trivia Time</h1>
-				<p>Hello potential employers, boyfriends, and random internet users that happened to stumble upon my portfolio. I've created a little quiz for you to get to know me and my likes. Have fun, and good luck!
-				</p>
-			<button id="start-button">START</button>
-			<div id="timer-div"></div>
-			<div id="scoreboard"></div>
-		</div>
-	</div>
-</div>
-	
+    <div class="playing-area">
+        <h1>Trivia Time</h1>
+        <p class="welcome-p">
+            Hello potential employers, boyfriends, and random internet users 
+            that happened to stumble upon my portfolio. I've created a little 
+            quiz for you to get to know me and my likes. It's a tricky quiz, because the answers
+            are all of my favorite things and you have to guess the one I like most.
+            Once you press start, the timer starts counting down. You have one minute - have fun and good luck!
+        </p>
+        <button id="start-button">START</button>
+        <div id="timer-div"></div>
+        <div id="trivia-div"></div>
+        <div id="done-div"></div>
+        <div id="scoreboard-div"></div>
+    </div>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="assets/javascript/app.js"></script>
  
