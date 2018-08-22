@@ -12,7 +12,7 @@ $(document).ready(function(){
     correctAnswer:"Tamales"
   },{
     question:"What is Kate's favorite color?",
-    answers:["White", "Pink", "Gold", "Black"],
+    answers:["White", "Pink", "Gold", "Mint"],
     correctAnswer:"White"
   },{
     question:"What is Kate's favorite book?",
@@ -44,7 +44,7 @@ $(document).ready(function(){
     correctAnswer:"Champagne"
   },{
     question:"What is Kate's favorite movie?",
-    answers:["Pirates of the Carribbean", "Mad Max: Fury Road", "King Kong: Skull Island", "Mamma Mia: Here We Go Again"],
+    answers:["Peter Pan", "Mad Max: Fury Road", "King Kong: Skull Island", "Mamma Mia 2"],
     correctAnswer:"Mad Max: Fury Road"
   }];
 

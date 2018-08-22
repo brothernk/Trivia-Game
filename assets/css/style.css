@@ -9,6 +9,7 @@ body {
 	background-color:#EE6055;
 }
 
+/* Landing Page ======================================================================== */
 .playing-area {
 	background-color: #AAF683;
 	color:#3E875F;
@@ -16,7 +17,6 @@ body {
 	font-family: "Open Sans", sans-serif;
 	flex-direction: column;
 	justify-content: space-around;
-	align-items: center;
 	text-align: center;
 	padding:50px 30px;
 	min-height: 100vh;
@@ -24,8 +24,7 @@ body {
 	box-shadow: 10px 10px 100px #6D2C27;
 }
 
-/* Right Side =========================================================================== */
-h1, button {
+h1, h2, button {
 	font-family: "Luckiest Guy", serif;
 }
 
@@ -35,34 +34,12 @@ h1 {
 	letter-spacing: 5px;
 }
 
-h2 {
-	padding:30px;
-	font:30px "Luckiest Guy";
-	font-weight: bold;
-	color:white;
-	letter-spacing: 3px;
-	background-color:#377955;
-	margin: 70px 0 20px 0;
-	box-shadow: 5px 5px 5px #88c468;
-}
-
 .welcome-p {
 	font-size: 17px;
 	max-width: 700px;
 }
 
-.timer-p/*Timer*/ {
-	font: 30px "Luckiest Guy", sans-serif;
-	position: fixed;
-	top:1vh;
-	right:1vw;
-	width:85px;
-	background-color:#AAF683;
-	padding:25px 20px 20px 20px;
-	border-radius: 5px;
-	box-shadow: 5px 5px 20px #6D2C27;
-}
-
+/*Buttons ================================== */
 button {
 	background-color: #3E875F;
 	padding:20px 20px 15px 20px;
@@ -81,19 +58,70 @@ button:hover{
 	background-color:#377955;
 }
 
-input[type="radio"]{
-	margin:20px 10px 10px 50px;
-}
-
-#scoreboard-div {
-	padding:20px;
+#start-button{
+	margin-top:20px;
 }
 
 #done-div {
 	margin-top:50px;
 }
 
-h6{
+
+/*Game Board =======================================================*/
+h2 /*Trivia Questions*/{
+	padding:30px;
+	font-size:30px;
+	color:white;
+	letter-spacing: 3px;
+	background-color:#377955;
+	margin: 70px 0 20px 0;
+	box-shadow: 5px 5px 5px #88c468;
+}
+
+input[type="radio"]{
+	margin:20px 10px 10px 50px;
+}
+
+.timer-p/*Timer*/ {
+	font: 30px "Luckiest Guy", sans-serif;
+	position: fixed;
+	top:1vh;
+	right:1vw;
+	width:85px;
+	background-color:#AAF683;
+	padding:25px 20px 20px 20px;
+	border-radius: 5px;
+	box-shadow: 5px 5px 20px #6D2C27;
+}
+
+#scoreboard-div {
+	padding:20px;
+}
+
+h6 {
 	max-width:300px;
 	margin:50px;
+}
+
+
+/*Mobile Responsive ================================================*/
+@media only screen and (max-width: 600px) {
+	.playing-area{
+		width: 100vw;
+	}
+    h1{
+		font-size:60px;
+	}
+	h2{
+		font-size: 20px;
+		padding:30px 5px;
+		margin:50px 0 10px 0;
+	}
+	input[type="radio"]{
+		margin:20px 10px 10px 20px;
+	}
+	.timer-p/*Timer*/ {
+		background-color:#EE6055;
+		color:#6D2C27;
+	}
 }
