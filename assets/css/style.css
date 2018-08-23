@@ -106,11 +106,14 @@ h6 {
 
 
 /*Mobile Responsive ================================================*/
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
 	.playing-area{
 		width: 100vw;
 		justify-content: center;
 		padding:50px 10px;
+	}
+	.welcome-p{
+		padding:20px;
 	}
     h1{
 		font-size:60px;
