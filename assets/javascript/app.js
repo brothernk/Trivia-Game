@@ -174,6 +174,9 @@ $(document).ready(function(){
 
       this.result();
       $("#done-div").hide();
+      $("#scoreboard-div").show();
+      $("body").removeClass("new-color");
+      $("#playing-area").removeClass("new-shadow");
     },
 
     result: function() {
@@ -197,9 +200,6 @@ $(document).ready(function(){
 
   $(document).on("click", "#done", function() {
     game.done();
-    $("#scoreboard-div").show();
-    $("body").removeClass("new-color");
-    $("#playing-area").removeClass("new-shadow");
   });
 
   $(".custom-radio").click(function(){
