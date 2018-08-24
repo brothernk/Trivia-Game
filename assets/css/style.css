@@ -9,8 +9,16 @@ body {
 	background-color:#EE6055;
 }
 
+.new-color{
+	background-color: #3E875F;
+}
+
+.new-shadow{
+	box-shadow: 10px 10px 100px #183626 !important;
+}
+
 /* Landing Page ======================================================================== */
-.playing-area {
+#playing-area {
 	background-color: #AAF683;
 	color:#3E875F;
 	display: flex;
@@ -18,7 +26,7 @@ body {
 	flex-direction: column;
 	justify-content: space-around;
 	text-align: center;
-	padding:50px 30px;
+	padding:50px 30px 30px 30px;
 	min-height: 100vh;
 	width: 80vw;
 	box-shadow: 10px 10px 100px #6D2C27;
@@ -75,12 +83,8 @@ h2 /*Trivia Questions*/{
 	color:white;
 	letter-spacing: 3px;
 	background-color:#377955;
-	margin: 70px 0 20px 0;
+	margin: 50px 0 10px 0;
 	box-shadow: 5px 5px 5px #88c468;
-}
-
-input[type="radio"]{
-	margin:20px 10px 10px 50px;
 }
 
 .timer-p/*Timer*/ {
@@ -89,27 +93,65 @@ input[type="radio"]{
 	top:1vh;
 	right:1vw;
 	width:85px;
-	background-color:#AAF683;
+	background-color:#EE6055;
 	padding:25px 20px 20px 20px;
 	border-radius: 5px;
 	box-shadow: 5px 5px 20px #6D2C27;
+	color: #6D2C27;
 }
 
 #scoreboard-div {
 	padding:20px;
 }
 
-h6 {
-	max-width:300px;
-	margin:50px 0;
+input[type="radio"]{
+	display: none;
 }
 
+.radio-container {
+	padding:20px;
+	max-width:75vw;
+	background-color:#EE6055;
+	border-bottom:4px solid #be4c44;
+	cursor: pointer;
+	margin:5px 0;
+}
+
+.radio-container:hover {
+	background-color: #be4c44;
+	transform: scale(.99);
+}
+
+.radio-container span {
+	cursor: pointer;
+	padding:20px 20vw;
+}
+
+.radio-container span::before, .radio-container span::after{
+	content: '';
+	position: absolute;
+	top:0;
+	bottom:0;
+	margin:auto;
+}
+
+span.custom-radio{
+	color: white;
+}
+
+input[type="radio"]:checked + label span.custom-radio {
+	background-color: #be4c44;
+}
+
+.clicked {
+	background-color:purple;
+}
 
 /*Mobile Responsive ================================================*/
 @media only screen and (max-width: 700px) {
-	.playing-area{
-		width: 100vw;
-		justify-content: center;
+	#playing-area, .new-shadow{
+		width: 100vw !important;
+		justify-content: flex-start;
 		padding:50px 10px;
 	}
 	.welcome-p{
@@ -123,11 +165,7 @@ h6 {
 		padding:30px 5px;
 		margin:50px 0 10px 0;
 	}
-	input[type="radio"]{
-		margin:20px 10px 10px 20px;
-	}
-	.timer-p/*Timer*/ {
-		background-color:#EE6055;
-		color:#6D2C27;
+	.radio-container {
+		max-width:94vw;
 	}
 }

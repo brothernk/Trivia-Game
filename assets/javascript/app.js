@@ -72,8 +72,9 @@ $(document).ready(function(){
       for (var i = 0; i < questions.length; i++) {
         gameboard.append("<h2>" + questions[i].question + "</h2>");
         for (var j = 0; j < questions[i].answers.length; j++) {
-          gameboard.append("<input type='radio' name='question-" + i +
-          "' value='" + questions[i].answers[j] + "' '>" + questions[i].answers[j]);
+          gameboard.append("<div class='radio-container'><input type='radio' name='question-" + i +
+          "' value='" + questions[i].answers[j] + "' id='radio-" + questions[i].answers[j] + "'><label for='radio-" + questions[i].answers[j] + 
+          "'><span class='custom-radio'> " + questions[i].answers[j] + "</span></label></div>"); 
         }
       }
       $("#done-div").append("<button id='done'>Done</button>");
@@ -189,11 +190,19 @@ $(document).ready(function(){
   //Start and Stop Buttons
   $("#start-button").click(function() {
     game.start();
-    $("timer-div, #trivia-div, #scoreboard-div, #done-div").show();
+    $("#timer-div, #trivia-div, #done-div").show();
+    $("body").addClass("new-color");
+    $("#playing-area").addClass("new-shadow");
   });
-
 
   $(document).on("click", "#done", function() {
     game.done();
+    $("#scoreboard-div").show();
+    $("body").removeClass("new-color");
+    $("#playing-area").removeClass("new-shadow");
   });
+
+  $(".custom-radio").click(function(){
+    console.log("clicked it");
+  })
 });
