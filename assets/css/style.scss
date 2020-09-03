@@ -1,0 +1,193 @@
+// -- Colors -- //
+$green: #3e875f;
+$darkGreen: #377955;
+$lime: #aaf683;
+$coral: #ee6055;
+$red: #6d2c27;
+$white: #fff5f3;
+
+// -- Global -- //
+* { 
+	margin:0 auto; 
+	padding: 0; 
+	box-sizing: border-box; 
+}
+
+body {
+	background-color:$coral;
+  font-family: 'Kumbh Sans', sans-serif;
+  font-size: 14px;
+  text-align: center;
+
+  @media only screen and (min-width: 1025px) {
+    font-size: 18px;
+  }
+}
+
+// -- Landing -- //
+.playing-area {
+	background-color: $lime;
+	color:$green;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	min-height: 100vh;
+  box-shadow: 10px 10px 100px #6D2C27;
+  padding:60px 20px;
+
+  @media only screen and (min-width: 1025px) {
+    width: 80vw;
+    padding:60px;
+  }
+}
+
+h1 {
+  font-family: "Luckiest Guy", serif;
+	font-size: 60px;
+	color:$green;
+  letter-spacing: 5px;
+
+  @media only screen and (min-width: 1025px) {
+    font-size: 120px;
+  }
+}
+
+p{
+  line-height: 1.4;
+  
+  span{
+    text-decoration: line-through;
+  }
+}
+
+// -- Buttons -- //
+.button {
+  font-family: "Luckiest Guy", serif;
+  letter-spacing: 3px;
+	background-color: $green;
+	cursor: pointer;
+	font-size:24px;
+	border-radius: 10px;
+	color:$white;
+	border:none;
+  width:200px;
+  padding:20px 0 12px;
+  
+  &:hover{
+    transition: .15s ease;
+    background-color:$darkGreen;
+  }
+
+  &.button--done{
+    display: none;
+  }
+}
+
+// -- Game -- //
+h2 {
+  font-family: "Luckiest Guy", serif;
+  font-size:30px;
+  letter-spacing: 3px;
+  margin-top:60px;
+	color:$white;
+  background-color:$darkGreen;
+  border-radius: 4px;
+  padding: 30px 20px 22px;
+}
+
+.counter{
+	font: 30px "Luckiest Guy", sans-serif;
+	position: fixed;
+  top:24px;
+  right:24px;
+	width:64px;
+	background-color:$coral;
+	padding:20px 0 14px;
+	border-radius: 5px;
+	box-shadow: 5px 5px 20px $red;
+  color: $red;
+  display: none;
+}
+
+.radio-container {
+	padding:24px 0 22px;
+	background-color:$coral;
+  border-bottom:4px solid #be4c44;
+  color:$white;
+	cursor: pointer;
+  margin:6px 0;
+  border-radius: 4px;
+  letter-spacing: 1px;
+  transition: .25s ease;
+
+  &.selected{
+    border-color: #a6423a;
+    background-color: #a6423a;
+
+    &:hover{
+      border-color: #a6423a;
+      background-color: #a6423a;
+      transform: scale(1);
+    }
+  }
+
+  &:focus,
+  &:active{
+    background-color: $green;
+  }
+
+  &:hover{
+    background-color: #be4c44;
+    transform: scale(.98);
+  }
+
+  span{
+    cursor: pointer;
+    color:$white;
+    letter-spacing: 1.4px;
+  }
+
+  input[type="radio"]{
+    display: none;
+  }
+}
+
+// -- Completed -- //
+.answers{
+  margin-bottom:8px;
+}
+
+.trivia-started{
+  background-color: $green;
+
+  .playing-area{
+    box-shadow: 10px 10px 100px #183626;
+  }
+
+  .welcome-msg{
+    display:none;
+  }
+
+  .counter{
+    display:block;
+  }
+
+  .button {
+    &.button--start{
+      display: none;
+    }
+
+    &.button--done{
+      display: block;
+      margin-top:24px;
+    }
+  }
+}
+
+.trivia-ended{
+  .welcome-msg,
+  .gameboard,
+  .button{
+    display:none;
+  }
+}

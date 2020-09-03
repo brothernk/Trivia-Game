@@ -1,172 +1,196 @@
-/* Global Styling =========================================================================== */
-* { 
-    margin:0 auto; 
-    padding: 0; 
-    box-sizing: border-box; 
+* {
+  margin: 0 auto;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
-	background-color:#EE6055;
+  background-color: #ee6055;
+  font-family: 'Kumbh Sans', sans-serif;
+  font-size: 14px;
+  text-align: center;
 }
 
-.new-color{
-	background-color: #3E875F;
+@media only screen and (min-width: 1025px) {
+  body {
+    font-size: 18px;
+  }
 }
 
-.new-shadow{
-	box-shadow: 10px 10px 100px #183626 !important;
+.playing-area {
+  background-color: #aaf683;
+  color: #3e875f;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  min-height: 100vh;
+  -webkit-box-shadow: 10px 10px 100px #6D2C27;
+          box-shadow: 10px 10px 100px #6D2C27;
+  padding: 60px 20px;
 }
 
-/* Landing Page ======================================================================== */
-#playing-area {
-	background-color: #AAF683;
-	color:#3E875F;
-	display: flex;
-	font-family: "Open Sans", sans-serif;
-	flex-direction: column;
-	justify-content: space-around;
-	text-align: center;
-	padding:50px 30px 30px 30px;
-	min-height: 100vh;
-	width: 80vw;
-	box-shadow: 10px 10px 100px #6D2C27;
-}
-
-h1, h2, button {
-	font-family: "Luckiest Guy", serif;
+@media only screen and (min-width: 1025px) {
+  .playing-area {
+    width: 80vw;
+    padding: 60px;
+  }
 }
 
 h1 {
-	font-size: 120px;
-	color:#3E875F;
-	letter-spacing: 5px;
+  font-family: "Luckiest Guy", serif;
+  font-size: 60px;
+  color: #3e875f;
+  letter-spacing: 5px;
 }
 
-.welcome-p {
-	font-size: 17px;
-	max-width: 700px;
-	padding:10px 0;
+@media only screen and (min-width: 1025px) {
+  h1 {
+    font-size: 120px;
+  }
 }
 
-/*Buttons ================================== */
-button {
-	background-color: #3E875F;
-	padding:20px 20px 15px 20px;
-	cursor: pointer;
-	font-size:25px;
-	border-radius: 10px;
-	color:#FFF5F3;
-	border:none;
-	box-shadow: 3px 3px 5px #3E875F;
+p {
+  line-height: 1.4;
 }
 
-button:hover{
-	transform: scale(.98);
-	box-shadow: 1px 1px 5px #3E875F;
-	transition: .15s;
-	background-color:#377955;
+p span {
+  text-decoration: line-through;
 }
 
-#start-button{
-	margin-top:20px;
+.button {
+  font-family: "Luckiest Guy", serif;
+  letter-spacing: 3px;
+  background-color: #3e875f;
+  cursor: pointer;
+  font-size: 24px;
+  border-radius: 10px;
+  color: #fff5f3;
+  border: none;
+  width: 200px;
+  padding: 20px 0 12px;
 }
 
-#done-div {
-	margin-top:50px;
+.button:hover {
+  -webkit-transition: .15s ease;
+  transition: .15s ease;
+  background-color: #377955;
 }
 
-
-/*Game Board =======================================================*/
-h2 /*Trivia Questions*/{
-	padding:30px;
-	font-size:30px;
-	color:white;
-	letter-spacing: 3px;
-	background-color:#377955;
-	margin: 50px 0 10px 0;
-	box-shadow: 5px 5px 5px #88c468;
+.button.button--done {
+  display: none;
 }
 
-.timer-p/*Timer*/ {
-	font: 30px "Luckiest Guy", sans-serif;
-	position: fixed;
-	top:1vh;
-	right:1vw;
-	width:85px;
-	background-color:#EE6055;
-	padding:25px 20px 20px 20px;
-	border-radius: 5px;
-	box-shadow: 5px 5px 20px #6D2C27;
-	color: #6D2C27;
+h2 {
+  font-family: "Luckiest Guy", serif;
+  font-size: 30px;
+  letter-spacing: 3px;
+  margin-top: 60px;
+  color: #fff5f3;
+  background-color: #377955;
+  border-radius: 4px;
+  padding: 30px 20px 22px;
 }
 
-#scoreboard-div {
-	padding:20px;
-}
-
-h6 {
-	padding:80px 100px 0 100px;
-}
-
-input[type="radio"]{
-	display: none;
+.counter {
+  font: 30px "Luckiest Guy", sans-serif;
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  width: 64px;
+  background-color: #ee6055;
+  padding: 20px 0 14px;
+  border-radius: 5px;
+  -webkit-box-shadow: 5px 5px 20px #6d2c27;
+          box-shadow: 5px 5px 20px #6d2c27;
+  color: #6d2c27;
+  display: none;
 }
 
 .radio-container {
-	padding:20px;
-	max-width:75vw;
-	background-color:#EE6055;
-	border-bottom:4px solid #be4c44;
-	cursor: pointer;
-	margin:5px 0;
+  padding: 24px 0 22px;
+  background-color: #ee6055;
+  border-bottom: 4px solid #be4c44;
+  color: #fff5f3;
+  cursor: pointer;
+  margin: 6px 0;
+  border-radius: 4px;
+  letter-spacing: 1px;
+  -webkit-transition: .25s ease;
+  transition: .25s ease;
+}
+
+.radio-container.selected {
+  border-color: #a6423a;
+  background-color: #a6423a;
+}
+
+.radio-container.selected:hover {
+  border-color: #a6423a;
+  background-color: #a6423a;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.radio-container:focus, .radio-container:active {
+  background-color: #3e875f;
 }
 
 .radio-container:hover {
-	background-color: #be4c44;
-	transform: scale(.99);
+  background-color: #be4c44;
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
 }
 
 .radio-container span {
-	cursor: pointer;
-	padding:20px 20vw;
+  cursor: pointer;
+  color: #fff5f3;
+  letter-spacing: 1.4px;
 }
 
-.radio-container span::before, .radio-container span::after{
-	content: '';
-	position: absolute;
-	top:0;
-	bottom:0;
-	margin:auto;
+.radio-container input[type="radio"] {
+  display: none;
 }
 
-span.custom-radio{
-	color: white;
+.answers {
+  margin-bottom: 8px;
 }
 
-input[type="radio"]:checked + label span.custom-radio {
-	background-color: #be4c44;
+.trivia-started {
+  background-color: #3e875f;
 }
 
-
-/*Mobile Responsive ================================================*/
-@media only screen and (max-width: 700px) {
-	#playing-area, .new-shadow{
-		width: 100vw !important;
-		justify-content: flex-start;
-		padding:50px 10px;
-	}
-	.welcome-p{
-		padding:20px;
-	}
-    h1{
-		font-size:60px;
-	}
-	h2{
-		font-size: 20px;
-		padding:30px 5px;
-		margin:50px 0 10px 0;
-	}
-	.radio-container {
-		max-width:94vw;
-	}
+.trivia-started .playing-area {
+  -webkit-box-shadow: 10px 10px 100px #183626;
+          box-shadow: 10px 10px 100px #183626;
 }
+
+.trivia-started .welcome-msg {
+  display: none;
+}
+
+.trivia-started .counter {
+  display: block;
+}
+
+.trivia-started .button.button--start {
+  display: none;
+}
+
+.trivia-started .button.button--done {
+  display: block;
+  margin-top: 24px;
+}
+
+.trivia-ended .welcome-msg,
+.trivia-ended .gameboard,
+.trivia-ended .button {
+  display: none;
+}
+/*# sourceMappingURL=style.css.map */
